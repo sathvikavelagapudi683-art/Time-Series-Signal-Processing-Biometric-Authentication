@@ -73,4 +73,4 @@ The accompanying academic report records an experimental accuracy of approximate
 - The report discusses ESP32-based PPG acquisition and a Doppler motion-sensing observation; this repository's runnable Python entry point focuses on CNN training from pre-segmented PPG arrays.
 
 ## Citation / attribution
-The project report included in `report/` is the accompanying academic write-up for this implementation. A public copy has had the institutional email address removed from its title block.
+The companion report is summarized in `REPORT_NOTES.md`. The original PDF is not included in this repository at present.
