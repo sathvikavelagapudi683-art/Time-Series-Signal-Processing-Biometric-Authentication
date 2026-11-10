@@ -8,7 +8,7 @@ Photoplethysmography (PPG) is a non-invasive optical measurement that captures b
 The accompanying report describes preprocessing with noise filtering, baseline correction and z-score normalization, followed by segmentation into fixed windows of 300 samples. **The original preprocessing implementation was not recovered**, so this repository documents the reported method but does not claim to reproduce that preprocessing stage.
 
 ## CNN model
-The training script in `src/train_ppg_cnn.py` loads already-segmented arrays and trains a 1D CNN with:
+The training script in `train_ppg_cnn.py` loads already-segmented arrays and trains a 1D CNN with:
 
 - Input shape: `(300, 1)`
 - Conv1D: 32 filters, kernel size 3, ReLU
@@ -27,7 +27,7 @@ The script expects two files in the repository root (or run directory):
 - `X.npy`: segmented PPG samples with expected shape `(2892, 300, 1)`
 - `y.npy`: integer class labels with expected shape `(2892,)`
 
-The actual dataset is not included because PPG is biometric data. Do not upload identifiable or sensitive raw physiological recordings to a public repository. See [`data/README.md`](data/README.md) for details.
+The actual dataset is not included because PPG is biometric data. Do not upload identifiable or sensitive raw physiological recordings to a public repository. See [`DATASET_README.md`](DATASET_README.md) for details.
 
 ## Setup
 Python 3.10–3.11 is recommended for broad TensorFlow compatibility.
@@ -45,7 +45,7 @@ pip install -r requirements.txt
 Place `X.npy` and `y.npy` in the working directory, then run:
 
 ```bash
-python src/train_ppg_cnn.py
+python train_ppg_cnn.py
 ```
 
 The script performs an 80:20 stratified train/test split, reserves 20% of the training split for validation, trains for 20 epochs with batch size 16, prints accuracy, weighted precision/recall/F1, ROC-AUC, confusion matrix and classification report, then saves `PPG_CNN_Model.keras`.
@@ -58,12 +58,9 @@ The accompanying academic report records an experimental accuracy of approximate
 ```text
 .
 ├── README.md
-├── src/
-│   └── train_ppg_cnn.py
-├── data/
-│   └── README.md
-├── report/
-│   └── ppg_biometric_recognition_report.pdf
+├── train_ppg_cnn.py
+├── DATASET_README.md
+├── REPORT_NOTES.md
 ├── requirements.txt
 └── .gitignore
 ```
