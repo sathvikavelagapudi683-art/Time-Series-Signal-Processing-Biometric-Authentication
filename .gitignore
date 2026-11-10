@@ -1,0 +1,21 @@
+# Biometric data
+*.npy
+*.npz
+
+# Trained models / experiment outputs
+*.keras
+*.h5
+*.hdf5
+*.joblib
+*.pkl
+*.csv
+*.log
+outputs/
+runs/
+
+# Python environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
